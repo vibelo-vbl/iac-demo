@@ -1,7 +1,11 @@
 on:
   workflow_dispatch:
   push:
-  
+
+permissions:
+  id-token: write
+
+
 jobs:
   job1:
     runs-on: ubuntu-latest
