@@ -8,8 +8,8 @@ jobs:
     steps:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
-         role-to-assume: arn:aws:iam::323329925292:role/github-actions-oidc
          aws-region: us-west-2
+         role-to-assume: arn:aws:iam::323329925292:role/github-actions-oidc
       - run: |
          Install-Module -Name AWS.Tools.EC2 -Force
          Get-EC2Vpc
