@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  id-token: write
+
+
+jobs:
+  terraform-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close Source Code
+        uses: actions/checkout@v2
+      - name: Configure AWS Credentials
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+         aws-region: us-west-2
+         role-to-assume: arn:aws:iam::323329925292:role/github-actions-oidc
+      - name: Run Terraform Init command
+        run: terraform init
+      - name: Run Terraform Plan command
+        run: terraform plan
