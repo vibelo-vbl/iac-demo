@@ -4,5 +4,5 @@ provider "aws" {
 
 module "newvpc" {
   source = "terraform-aws-modules/vpc/aws"
-  cidr = "10.100.0.0/16"
+  cidr = "10.200.0.0/16"
 }
