@@ -1,8 +1,3 @@
-provider "aws" {
-  region = "us-west-2"
-}
-
-module "newvpc" {
-  source = "terraform-aws-modules/vpc/aws"
-  cidr = "10.200.0.0/16"
+resource "aws_vpc" "new_vpc" {
+  cidr_block = "10.200.0.0/16"
 }
